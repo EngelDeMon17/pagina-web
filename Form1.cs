@@ -37,7 +37,8 @@ namespace pagina_web
 
         private void iNICIOToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           // webView21.GoHome();
+            // webView21.GoHome();
+            webView21.CoreWebView2.Navigate("https://www.google.com/");
         }
 
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
