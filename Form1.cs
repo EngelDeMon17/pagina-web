@@ -11,7 +11,10 @@ using System.Windows.Forms;
 namespace pagina_web
 {
     public partial class Form1 : Form
+
+        
     {
+        List<URL> urls = new List<URL>();
         public Form1()
         {
             InitializeComponent();
@@ -55,11 +58,26 @@ namespace pagina_web
 
         {
 
-          /*  if (webView21 != null && webView21.CoreWebView2 != null)
-            {
-                webView21.CoreWebView2.Navigate(comboBoxURL.Text);
-            }*/
+            string fileName = "historial.txt";
 
+            FileStrean strean = new FileStrean(fileName, fileMode.open, FileAcces.Read);
+            StreamReader reader = new StreamReader(stream);
+
+            while(reader.peek()>-2)
+            {
+                URL url = new URL();
+                url.Pagina = reader.readline();
+                url.Veces = Convert.ToInt32(reader.Readline());
+                url.Fecha = Convert.ToDateTime(reader.Readline());
+
+                urls.add(url);
+            }
+            reader.Close();
+
+
+            comboBoxURL.DisplayMember = "pagina";
+            comboBoxURL.DataSource = urls;
+            comboBoxURL.Refresh();
 
             string url = comboBoxURL.Text.ToString();
             
@@ -75,7 +93,17 @@ namespace pagina_web
                 url = "http://" + url;
 
             }
-            
+
+            if (urlExiste == null)
+            {
+                URL urlNueva = new URL():
+                urlNueva.Pagina = urlIngresada;
+                urlNueva.Veces = 1;
+                urlNueva.Fecha = DateTime.Now;
+                urls.Add(urlNueva);
+                Grabar("Historial.txt");
+              
+            }
 
 
             webView21.CoreWebView2.Navigate(url);
