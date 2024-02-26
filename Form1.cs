@@ -60,19 +60,19 @@ namespace pagina_web
 
             string fileName = "historial.txt";
 
-            FileStrean strean = new FileStrean(fileName, fileMode.open, FileAcces.Read);
-            StreamReader reader = new StreamReader(stream);
+            //FileStrean strean = new FileStrean(fileName, fileMode.open, FileAcces.Read);
+            //StreamReader reader = new StreamReader(stream);
 
-            while(reader.peek()>-2)
-            {
-                URL url = new URL();
-                url.Pagina = reader.readline();
-                url.Veces = Convert.ToInt32(reader.Readline());
-                url.Fecha = Convert.ToDateTime(reader.Readline());
+            //while(reader.peek()>-2)
+            //{
+            //    URL url = new URL();
+            //    url.Pagina = reader.readline();
+            //    url.Veces = Convert.ToInt32(reader.Readline());
+            //    url.Fecha = Convert.ToDateTime(reader.Readline());
 
-                urls.add(url);
-            }
-            reader.Close();
+            //    urls.add(url);
+            //}
+            //reader.Close();
 
 
             comboBoxURL.DisplayMember = "pagina";
@@ -80,6 +80,8 @@ namespace pagina_web
             comboBoxURL.Refresh();
 
             string url = comboBoxURL.Text.ToString();
+            string urlIngresada = comboBoxURL.Text;
+            URL urlExiste = urls.Find(u => u.Pagina == urlIngresada);
             
             if (!(url.Contains(".")))
             {
@@ -96,12 +98,12 @@ namespace pagina_web
 
             if (urlExiste == null)
             {
-                URL urlNueva = new URL():
+                URL urlNueva = new URL();
                 urlNueva.Pagina = urlIngresada;
                 urlNueva.Veces = 1;
                 urlNueva.Fecha = DateTime.Now;
                 urls.Add(urlNueva);
-                Grabar("Historial.txt");
+                //Grabar("Historial.txt");
               
             }
 

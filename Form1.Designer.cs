@@ -49,7 +49,7 @@ namespace pagina_web
             this.iNICIOToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(832, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(742, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -76,10 +76,10 @@ namespace pagina_web
             // 
             // webBrowserURL
             // 
-            this.webBrowserURL.Location = new System.Drawing.Point(739, 55);
+            this.webBrowserURL.Location = new System.Drawing.Point(739, 108);
             this.webBrowserURL.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowserURL.Name = "webBrowserURL";
-            this.webBrowserURL.Size = new System.Drawing.Size(89, 73);
+            this.webBrowserURL.Size = new System.Drawing.Size(20, 20);
             this.webBrowserURL.TabIndex = 1;
             this.webBrowserURL.Visible = false;
             this.webBrowserURL.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
@@ -123,7 +123,7 @@ namespace pagina_web
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumPurple;
-            this.ClientSize = new System.Drawing.Size(832, 572);
+            this.ClientSize = new System.Drawing.Size(742, 572);
             this.Controls.Add(this.webView21);
             this.Controls.Add(this.buttonIR);
             this.Controls.Add(this.comboBoxURL);
@@ -131,7 +131,7 @@ namespace pagina_web
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "NAVEGADR WEB";
+            this.Text = "NAVEGADOR WEB";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
